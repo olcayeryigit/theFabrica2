@@ -1,56 +1,36 @@
-import React from 'react'
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import React from "react";
 
-const cardData = [
-  {
-    id: 1,
-    icon: "https://imgpanda.com/upload/ib/1yIWjyG41o.png",
-    title: "Web Development",
-    description: "We specialize in building modern, responsive, and high-performance websites tailored to your business needs.",
-    link: "/services/web-development"
-  },
-  {
-    id: 2,
-    icon: "https://imgpanda.com/upload/ib/Q4tSh2ctkH.png",
-    title: "Mobile App Development",
-    description: "From concept to deployment, we offer end-to-end mobile app development for both iOS and Android platforms.",
-    link: "/services/app-development"
-  },
-  {
-    id: 3,
-    icon: "https://imgpanda.com/upload/ib/YQdOwN6IDJ.png",
-    title: "UI/UX Design",
-    description: "Our team designs intuitive and engaging user interfaces to enhance the overall user experience of your products.",
-    link: "/services/ui-ux-design"
-  }
-];
-
-
-const Card = () => {
+const CardComponent = () => {
   return (
-    <div className='bg-gradient-to-r from-black to-[#05033D]'>
-    <section className="creative-cards style-one z-50 ">
-      <div className="container">
-        <div className="row">
-          {cardData.map(card => (
-            <div key={card.id} className="card-column">
-              <div className="card-details ">
-                <div className="card-icons">
-                  <img className="light-icon" src={card.icon} alt="icon" />
-                </div>
-                <h3 className='text-white'><a href={card.link}>{card.title}</a></h3>
-                <p className='text-white'>{card.description}</p>
-                <div className="read-more-btn">
-                  <MdKeyboardDoubleArrowRight className='text-pink-800' />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+    <main className="bg-[#141819] min-h-screen grid place-content-center p-6">
+      <div className="container grid justify-center gap-x-10 gap-y-6 md:grid-cols-1 lg:grid-cols-3">
+        <a className="card group relative overflow-hidden max-w-[240px] p-5 text-white rounded-2xl grid place-items-center aspect-square">
+          <img alt="Owl" height="40" src="https://assets.codepen.io/221808/owl.svg" width="40" />
+          <h2 className="font-comfortaa font-bold text-xl">Owl</h2>
+          <p className="text-xs">
+            A nocturnal bird that flies silently. Known for its large eyes, sharp claws, and as a symbol of wisdom.
+          </p>
+          <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-tl from-[#584827] via-[#c7a03c] to-[#f9de90] animate-gradient"></div>
+        </a>
+        <a className="card group relative overflow-hidden max-w-[240px] p-5 text-white rounded-2xl grid place-items-center aspect-square">
+          <img alt="Rabbit" height="40" src="https://assets.codepen.io/221808/rabbit.svg" width="40" />
+          <h2 className="font-comfortaa font-bold text-xl">Rabbit</h2>
+          <p className="text-xs">
+            A herbivorous animal with long ears and a hopping motion. Loved for its cute appearance.
+          </p>
+          <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-tl from-[#584827] via-[#c7a03c] to-[#f9de90] animate-gradient"></div>
+        </a>
+        <a className="card group relative overflow-hidden max-w-[240px] p-5 text-white rounded-2xl grid place-items-center aspect-square">
+          <img alt="Raven" height="40" src="https://assets.codepen.io/221808/raven.svg" width="40" />
+          <h2 className="font-comfortaa font-bold text-xl">Raven</h2>
+          <p className="text-xs">
+            A smart bird with black feathers. Often depicted in myths and stories as a symbol of mystery.
+          </p>
+          <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-tl from-[#584827] via-[#c7a03c] to-[#f9de90] animate-gradient"></div>
+        </a>
       </div>
-    </section>
-    </div>
+    </main>
   );
-}
+};
 
-export default Card;
+export default CardComponent;

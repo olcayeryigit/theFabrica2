@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./laptop.scss"
 const Laptop = () => {
   return (
     <div className="window z-50">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const SectionTitle = ({ title, color = 'text-black' }) => {
+const SectionTitle = ({ title, color = '#000000' }) => { // Renk kodunu prop olarak al
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -10,9 +10,7 @@ const SectionTitle = ({ title, color = 'text-black' }) => {
           setIsVisible(true);
         }
       },
-      {
-        threshold: 0.5, // Başlık %50 görünür olduğunda animasyonu tetikle
-      }
+      { threshold: 0.5 }
     );
 
     const element = document.getElementById('section-title');
@@ -26,10 +24,16 @@ const SectionTitle = ({ title, color = 'text-black' }) => {
   return (
     <div
       id="section-title"
-      className={`flex items-center justify-center text-5xl font-extrabold ${color} text-center relative py-8 transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100 animate-fadeIn' : 'opacity-0'}`}
+      className={`z-50 flex items-center justify-center text-5xl font-extrabold text-center relative py-8 transition-opacity duration-1000 ease-in-out ${
+        isVisible ? 'opacity-100 animate-fadeIn' : 'opacity-0'
+      }`}
     >
-      <div className="h-10 w-2 bg-[#DB9FC0] "></div> {/* Dikey çizgi */}
-      <h2 className="inline ml-2 pb-1">{title}</h2> {/* Metin ve çizgi arasındaki boşluğu kaldırdık */}
+      <h2
+        className="z-50 inline pb-1"
+        style={{ color: color }} // Inline style ile renk ekle
+      >
+        {title}
+      </h2>
     </div>
   );
 };
